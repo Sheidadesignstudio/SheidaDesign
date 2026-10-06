@@ -368,7 +368,7 @@ async function handlePasswordRecovery(event) {
   setMessage('Sending recovery email...')
 
   const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
-    redirectTo: 'https://sheidadesign.pages.dev/reset-password',
+    redirectTo: `${window.location.origin}/reset-password`,
   })
 
   if (error) {
