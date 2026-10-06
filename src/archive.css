@@ -357,6 +357,37 @@ a { color: inherit; }
 .admin-page > .admin-form-section .admin-form { border-color: rgba(55,74,66,.3); background: rgba(248,246,236,.72); box-shadow: 5px 6px 0 rgba(75,87,68,.1); transform: none; }
 .admin-login p.admin-intro { margin: 12px 0 20px; padding: 0; background: transparent; color: #63716a; font-size: 14px; line-height: 1.7; }
 .admin-login h1 { text-transform: none; }
+.admin-login .admin-login-link {
+  width: fit-content;
+  margin: 2px 0 0;
+  padding: 2px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  font: 11px var(--archive);
+}
+.admin-login .admin-login-link:hover {
+  background: transparent;
+  color: var(--rust);
+  transform: none;
+}
+.reset-password-page { max-width: 560px; margin: 8vh auto; }
+.reset-password-page h1 { margin: 0 0 18px; font-size: 43px; line-height: 1.08; }
+.reset-password-form { display: grid; gap: 12px; margin-top: 24px; }
+.reset-password-form label { display: grid; gap: 7px; color: #4a6057; font: 500 10px var(--archive); text-transform: uppercase; }
+.reset-password-form input {
+  width: 100%;
+  min-height: 44px;
+  box-sizing: border-box;
+  padding: 11px 12px;
+  border: 1px solid rgba(57,77,68,.38);
+  background: rgba(255,253,246,.82);
+  color: #314744;
+  font: 14px/1.6 var(--ui);
+}
+.reset-password-page > a { display: inline-block; margin-top: 18px; border-bottom: 1px solid var(--line); color: var(--ink); font: 11px var(--archive); }
+@media (max-width: 650px) { .reset-password-page { margin: 5vh auto; } .reset-password-page h1 { font-size: 36px; } }
 
 /* Refine the phone silhouette toward a compact consumer clamshell. */
 .contact-phone::before {

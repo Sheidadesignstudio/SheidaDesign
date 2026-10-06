@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 import Admin from './admin'
 import ProjectPage from './ProjectPage'
 import MusicPage from './MusicPage'
+import ResetPassword from './ResetPassword'
 
 const projects = [
   {
@@ -276,6 +277,10 @@ function App() {
 
   if (routePath === '/admin') {
     return <Admin />
+  }
+
+  if (routePath === '/reset-password') {
+    return <ResetPassword />
   }
 
   const visibleProjects = [

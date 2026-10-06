@@ -29,6 +29,8 @@ const [authLoading, setAuthLoading] = useState(true)
 const [activeSection, setActiveSection] = useState('projects')
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
+const [recoveringPassword, setRecoveringPassword] = useState(false)
+const [recoveryEmailSent, setRecoveryEmailSent] = useState(false)
   const [projectImages, setProjectImages] = useState([])
   const [selectedImageFiles, setSelectedImageFiles] = useState([])
   const [imagesLoading, setImagesLoading] = useState(false)
@@ -360,6 +362,22 @@ async function handleLogin(event) {
   }
 
   setMessage('Logged in successfully!')
+}
+async function handlePasswordRecovery(event) {
+  event.preventDefault()
+  setMessage('Sending recovery email...')
+
+  const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
+    redirectTo: 'https://sheidadesign.pages.dev/reset-password',
+  })
+
+  if (error) {
+    setMessage(error.message)
+    return
+  }
+
+  setRecoveryEmailSent(true)
+  setMessage('If an account exists for that email, recovery instructions have been sent.')
 }
 async function handleLogout() {
   await supabase.auth.signOut()
@@ -744,32 +762,88 @@ if (!user) {
   return (
     <main className="admin-page">
       <div className="admin-login">
-        <h1>Welcome Back, Sheida.</h1>
+        <h1>{recoveringPassword ? 'Reset Your Password.' : 'Welcome Back, Sheida.'}</h1>
         <p className="admin-intro">
-  Your little corner of the archive.
+          {recoveringPassword
+            ? 'We’ll send a secure link to your email.'
+            : 'Your little corner of the archive.'}
 </p>
 
-        <form onSubmit={handleLogin}>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-            required
-          />
+        {recoveringPassword ? (
+          recoveryEmailSent ? (
+            <button
+              type="button"
+              className="admin-login-link"
+              onClick={() => {
+                setRecoveringPassword(false)
+                setRecoveryEmailSent(false)
+                setMessage('')
+              }}
+            >
+              Back to log in
+            </button>
+          ) : (
+            <form onSubmit={handlePasswordRecovery}>
+              <input
+                type="email"
+                autoComplete="email"
+                placeholder="Email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                required
+              />
+              <button type="submit">Send recovery email</button>
+              <button
+                type="button"
+                className="admin-login-link"
+                onClick={() => {
+                  setRecoveringPassword(false)
+                  setMessage('')
+                }}
+              >
+                Back to log in
+              </button>
+            </form>
+          )
+        ) : (
+          <form onSubmit={handleLogin}>
+            <input
+              type="email"
+              autoComplete="username"
+              placeholder="Email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              required
+            />
 
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-            required
-          />
+            <input
+              type="password"
+              autoComplete="current-password"
+              placeholder="Password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              required
+            />
 
-          <button type="submit">Log in</button>
-        </form>
+            <button type="submit">Log in</button>
+            <button
+              type="button"
+              className="admin-login-link"
+              onClick={() => {
+                setRecoveringPassword(true)
+                setMessage('')
+              }}
+            >
+              Forgot password?
+            </button>
+          </form>
+        )}
 
-        {message && <p>{message}</p>}
+        {message && (
+          <p className="admin-message" role="status">
+            {message}
+          </p>
+        )}
       </div>
     </main>
   )
