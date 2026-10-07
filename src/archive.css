@@ -1609,7 +1609,7 @@ a { color: inherit; }
 @media (max-width: 600px) {
   .hero::after { top: 12%; right: 2%; width: 105px; }
   .hero h1 { font-size: clamp(2.65rem,12vw,3.5rem); }
-  .hero h1 .hero-highlight { display: inline; white-space: normal; }
+  .hero .hero-line .hero-highlight { display: inline; white-space: normal; }
   .about-copy { animation: none; }
   .note-card, .note-card:nth-child(2), .note-card:nth-child(3) { animation: none; }
   .contact-phone-image { animation-duration: 6s; }
