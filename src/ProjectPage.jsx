@@ -54,12 +54,12 @@ export default function ProjectPage() {
   }, [])
 
   if (loading) {
-    return <main className="project-page">Loading project...</main>
+    return <main className="project-page studio-project-page">Loading project...</main>
   }
 
   if (!project) {
     return (
-      <main className="project-page">
+      <main className="project-page studio-project-page">
         <h1>Project not found</h1>
 
         <button onClick={() => window.history.back()}>
@@ -84,7 +84,7 @@ export default function ProjectPage() {
     .filter(({ images }) => images.length > 0)
 
   return (
-    <main className="project-page">
+    <main className="project-page studio-project-page">
       <div className="project-header">
         <div className="project-brand">
           <a className="project-logo" href="/">
@@ -97,12 +97,7 @@ export default function ProjectPage() {
           <span className="brand-name">Sheida Design</span>
         </div>
 
-        <button
-          className="project-back"
-          onClick={() => window.history.back()}
-        >
-          ← Back
-        </button>
+        <a className="project-back" href="/#work">← All projects</a>
       </div>
 
       <p className="project-category">{project.category}</p>
@@ -144,14 +139,7 @@ export default function ProjectPage() {
         </div>
       )}
 
-      {imageSections.length > 0 && (
-        <div className="project-details">
-          <p>
-            This project page is ready for images, videos, writing,
-            and documentation.
-          </p>
-        </div>
-      )}
+      <div className="project-details"><a href="/#work">← Explore more work</a></div>
     </main>
   )
 }

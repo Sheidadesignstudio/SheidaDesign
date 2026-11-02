@@ -1,0 +1,138 @@
+/* Colours and framing taken from Sheida's own desk illustration. */
+.portfolio-home {
+  --paper:#dff5fb; --ink:#303347; --muted:#53576b; --accent:#a72b72; --soft:#d6cde4;
+  --frame:#484257; --sheet:#fff5dc; --pink:#f5afd0; --mint:#a9e4d9; --yellow:#f7d965;
+  background:var(--paper); color:var(--ink);
+}
+.portfolio-home.evening {
+  --paper:#192e38; --ink:#f2eddf; --muted:#c1cbd2; --accent:#f7acd3; --soft:#37374e;
+  --frame:#9ba6bc; --sheet:#273e49; --pink:#70516e; --mint:#315f60; --yellow:#f5d778;
+}
+.portfolio-home em{font-family:'Patrick Hand','Segoe Print',cursive;color:var(--accent);letter-spacing:0}
+.portfolio-home .studio-header{background:var(--paper);border-bottom:2px solid var(--frame);padding-block:19px}
+.portfolio-home .studio-brand{font-family:'Patrick Hand',cursive;font-size:32px;letter-spacing:0}
+.portfolio-home .brand-sub{font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:1.4px}
+.portfolio-home .studio-brand img{width:60px;height:58px}
+.portfolio-home.evening .studio-brand img{filter:invert(1);mix-blend-mode:screen}
+.portfolio-home .hello-link{border:2px solid var(--frame);border-radius:12px 17px 13px 10px;background:var(--pink);box-shadow:3px 3px var(--frame);color:var(--ink)}
+.portfolio-home .hello-link:hover{transform:translate(-1px,-1px)}
+.portfolio-home .drawn-hero{background:var(--paper);color:var(--ink)}
+.drawn-night-art{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;opacity:0;pointer-events:none;transition:opacity 1s ease-in-out}
+.lamp-on .drawn-night-art{opacity:1}
+.drawn-hero .lamp-glow{display:none}
+.portfolio-home .drawn-bottom{background:var(--soft);border-block:2px solid var(--frame);color:var(--ink)}
+.portfolio-home .drawn-bottom button{background:var(--sheet);color:var(--ink);border:1.5px solid var(--frame);border-radius:8px 12px 9px 13px;box-shadow:2px 2px var(--frame)}
+.portfolio-home .drawn-bottom button[aria-pressed=true]{background:var(--pink)}
+.portfolio-home .interest-strip{background:var(--mint);border-bottom:2px solid var(--frame);padding-block:22px;color:var(--ink)}
+.portfolio-home .interest-strip>span{font:18px 'Patrick Hand',cursive;letter-spacing:0}
+.portfolio-home .interest-strip p{font-size:11px;line-height:1.8}
+.portfolio-home .interest-strip i{color:var(--accent);font-style:normal;font-weight:700}
+.portfolio-home .interest-strip button{border:1.5px solid var(--frame);background:var(--sheet);color:var(--ink);border-radius:8px 13px 8px 11px;padding:9px 12px}
+.portfolio-home .studio-work{background:var(--paper);padding-block:65px}
+.portfolio-home .section-top{align-items:center;margin-bottom:30px}
+.portfolio-home .section-top h2{font:400 clamp(45px,5vw,70px)/1.05 'Patrick Hand',cursive;letter-spacing:-1px}
+.portfolio-home .eyebrow{font-size:9px;letter-spacing:1.3px}
+.portfolio-home .section-top>p{font:19px/1.35 'Patrick Hand',cursive;color:var(--muted)}
+.portfolio-home .work-tools{border:0;background:var(--soft);border-radius:8px 16px 10px 14px;padding:13px 16px;box-shadow:inset 0 0 0 1.5px var(--frame);margin-bottom:30px}
+.portfolio-home .work-tools button{font-size:11px;border-radius:7px 10px 8px 12px}
+.portfolio-home .work-filters button[aria-pressed=true]{background:var(--sheet);color:var(--ink);border:1.5px solid var(--frame);box-shadow:2px 2px var(--frame)}
+.portfolio-home .view-toggle{border:1.5px solid var(--frame);border-radius:9px;background:var(--sheet)}
+.portfolio-home .view-toggle button[aria-pressed=true]{background:var(--pink)}
+.portfolio-home .studio-projects.gallery{gap:28px}
+.portfolio-home .studio-project{border:2px solid var(--frame);border-radius:10px 17px 12px 15px;background:var(--sheet);padding:17px 20px 23px;box-shadow:5px 6px var(--frame);transition:transform .2s,box-shadow .2s}
+.portfolio-home .studio-project:hover{transform:translate(-2px,-3px);box-shadow:7px 9px var(--frame)}
+.portfolio-home .studio-project.has-image{padding:16px 16px 22px}
+.portfolio-home .work-image{background:#d2c8df;border:1.5px solid var(--frame);border-radius:5px 9px 7px 10px;height:400px}
+.portfolio-home .work-image>span{border:1.5px solid var(--frame);box-shadow:2px 3px var(--frame);border-radius:9px 13px 8px 10px;background:var(--mint);color:var(--ink);font-size:11px}
+.portfolio-home .work-info{padding-top:20px;gap:20px}
+.portfolio-home .work-number{font:22px 'Patrick Hand',cursive;color:var(--accent)}
+.portfolio-home .work-info p:first-child{display:inline-block;background:var(--mint);color:var(--ink);padding:5px 8px;border:1px solid var(--frame);border-radius:6px 9px 5px 8px;font-size:9px;letter-spacing:.3px}
+.portfolio-home .studio-project:nth-child(3n+2) .work-info p:first-child{background:var(--pink)}
+.portfolio-home .studio-project:nth-child(3n) .work-info p:first-child{background:var(--soft)}
+.portfolio-home .work-info h3{font:400 34px/1.1 'Patrick Hand',cursive;letter-spacing:0;margin:12px 0}
+.portfolio-home .work-info .work-description{font:12px/1.8 'DM Sans',sans-serif;color:var(--muted)}
+.portfolio-home .work-arrow{color:var(--accent)}
+.portfolio-home .index .studio-project{margin-bottom:15px;padding:17px 22px}
+.portfolio-home .index .work-info{padding-top:0}
+.portfolio-home .index .work-info>div{grid-template-columns:1fr 1fr}
+.portfolio-home .index .work-info h3{margin:0}
+.portfolio-home .index .work-info p:first-child{width:fit-content}
+.portfolio-home .studio-about{background:var(--soft);border-block:2px solid var(--frame);gap:60px;padding-block:65px}
+.portfolio-home .studio-about h2{font:400 clamp(38px,4vw,58px)/1.12 'Patrick Hand',cursive;letter-spacing:0}
+.portfolio-home .about-letter{position:relative;background:var(--sheet);color:var(--ink);border:2px solid var(--frame);border-radius:7px 12px 9px 5px;box-shadow:6px 7px var(--frame);padding:42px 35px 30px;transform:rotate(-1.5deg)}
+.portfolio-home .about-letter::before{position:absolute;content:'';width:75px;height:20px;top:-11px;left:calc(50% - 37px);background:var(--pink);border:1px solid var(--frame);transform:rotate(4deg)}
+.portfolio-home .about-letter p{font-size:13px;line-height:1.9;color:var(--muted)}
+.portfolio-home .about-letter>a{font-size:12px}
+.portfolio-home .letter-signature{font-size:38px;color:var(--accent)}
+.portfolio-home .studio-notes{background:var(--paper);padding-block:65px}
+.portfolio-home .studio-note-grid{gap:27px}
+.portfolio-home .studio-note-grid article{background:var(--sheet);border:2px solid var(--frame);border-radius:6px 10px 8px 5px;box-shadow:5px 6px var(--frame);padding:30px;transform:rotate(.6deg)}
+.portfolio-home .studio-note-grid article:nth-child(2){background:var(--mint);transform:rotate(-.8deg)}
+.portfolio-home .studio-note-grid article:nth-child(3){background:var(--pink);transform:rotate(.8deg)}
+.portfolio-home .studio-note-grid h3{font:400 32px/1.1 'Patrick Hand',cursive;color:var(--ink);margin:23px 0 16px}
+.portfolio-home .studio-note-grid article>p{color:var(--muted);font-size:13px}
+.portfolio-home .studio-contact{border-block:2px solid #484257;background:#163244;color:#ecf8ed;padding-block:60px}
+.portfolio-home .studio-contact .eyebrow{color:#a9e4d9}
+.portfolio-home .studio-contact h2{font:400 clamp(50px,6vw,85px)/1.05 'Patrick Hand',cursive;letter-spacing:-1px}
+.portfolio-home .studio-contact em{color:#f5afd0}
+.portfolio-home .contact-bottom p{color:#c7e0e3}
+.portfolio-home .contact-bottom a{background:#a9e4d9;color:#183845;border:2px solid #484257;padding:12px 17px;border-radius:9px 14px 8px 12px;box-shadow:3px 4px #788395;font-size:12px}
+.portfolio-home .contact-bottom a:nth-child(2){background:#f5afd0}
+.portfolio-home .contact-bottom a:nth-child(3){background:#f7d965}
+.portfolio-home .contact-bottom a:hover{transform:translateY(-2px)}
+.portfolio-home .studio-footer{background:var(--soft);color:var(--ink);font-size:10px;padding-block:24px}
+.portfolio-home .studio-footer>span:nth-child(2){font:18px 'Patrick Hand',cursive}
+.portfolio-home .studio-footer a{border-bottom:1px solid var(--frame);padding-bottom:3px}
+.portfolio-home.evening .drawn-topline{background:#192e38}
+.portfolio-home.evening .work-image{background:#34364c}
+.portfolio-home.evening .studio-contact{background:#132b36}
+.portfolio-home.evening .studio-note-grid article>p{color:var(--muted)}
+/* The same illustrated vocabulary continues onto the public detail pages. */
+.studio-project-page{background:#dff5fb;color:#303347}
+.studio-project-page h1{font-family:'Patrick Hand',cursive;font-weight:400;color:#303347;letter-spacing:-.02em}
+.studio-project-page .project-header{border-bottom:2px solid #484257}
+.studio-project-page .project-brand .brand-name{font-family:'Patrick Hand',cursive;font-size:26px;color:#303347}
+.studio-project-page .project-back{background:#f5afd0;border:2px solid #484257;border-radius:8px 12px 7px 10px;padding:9px 14px;box-shadow:3px 3px #484257;color:#303347}
+.studio-project-page .project-category{color:#972866}
+.studio-project-page .project-description{color:#53576b}
+.studio-project-page .project-composition-canvas{background:#fff5dc;border:2px solid #484257;border-radius:8px 13px 9px 11px;box-shadow:5px 6px #484257}
+.studio-project-page .project-composition-number{font:23px 'Patrick Hand',cursive;color:#972866}
+.studio-project-page .project-details{color:#972866;border-color:#484257}
+.music-page.site{background:#dff5fb;color:#303347;--graph-ink:#303347;--graph-coral:#a72b72}
+.music-page.site::before{background:none}
+.music-page .site-header{background:#dff5fb;border-bottom:2px solid #484257}
+.music-page .brand-name{font-family:'Patrick Hand',cursive;font-size:27px}
+.music-page .music-intro h1{font-family:'Patrick Hand',cursive;font-weight:400;letter-spacing:-.02em;color:#303347}
+.music-page .music-intro h1 span{color:#a72b72}
+.music-page .music-intro>p:last-child{color:#53576b}
+.music-page .walkman-device{background:#a9e4d9;border-color:#484257;box-shadow:7px 9px #484257}
+.music-page .spotify-player-card{background:#fff5dc;border:2px solid #484257;border-radius:8px 15px 9px 13px;box-shadow:6px 7px #484257}
+.music-page .spotify-player-heading h2{font-family:'Patrick Hand',cursive;font-weight:400;font-size:34px}
+.music-page .music-footer{background:#163244;color:#ecf8ed}
+html[data-desk-light=night] .studio-project-page,html[data-desk-light=night] .music-page.site{background:#192e38;color:#f2eddf;--graph-ink:#f2eddf}
+html[data-desk-light=night] .studio-project-page h1,html[data-desk-light=night] .studio-project-page .brand-name,html[data-desk-light=night] .music-page .music-intro h1{color:#f2eddf}
+html[data-desk-light=night] .studio-project-page .project-category,html[data-desk-light=night] .studio-project-page .project-details,html[data-desk-light=night] .music-page .music-intro h1 span{color:#f7acd3}
+html[data-desk-light=night] .studio-project-page .project-description,html[data-desk-light=night] .music-page .music-intro>p:last-child{color:#c1cbd2}
+html[data-desk-light=night] .studio-project-page .project-composition-canvas,html[data-desk-light=night] .music-page .spotify-player-card{background:#273e49;border-color:#9ba6bc;box-shadow:5px 6px #111f29}
+html[data-desk-light=night] .music-page .site-header{background:#192e38;border-color:#9ba6bc}
+html[data-desk-light=night] .music-page .music-page-kicker{color:#c1cbd2}
+@media(max-width:700px){
+  .portfolio-home .studio-header{padding-block:15px}.portfolio-home .studio-brand{font-size:29px}
+  .portfolio-home .section-top{align-items:flex-start}.portfolio-home .section-top h2{font-size:47px}
+  .portfolio-home .section-top>p{font-size:16px;max-width:140px}
+  .portfolio-home .studio-work,.portfolio-home .studio-notes{padding-block:43px}
+  .portfolio-home .work-tools{padding:12px;gap:16px}.portfolio-home .work-tools button{font-size:10px}
+  .portfolio-home .work-image{height:270px}.portfolio-home .studio-project{padding:15px 17px 20px}
+  .portfolio-home .work-info{gap:12px}.portfolio-home .work-info h3{font-size:30px}
+  .portfolio-home .studio-about{padding-block:43px;gap:25px}.portfolio-home .studio-about h2{font-size:39px}
+  .portfolio-home .about-letter{padding:31px 24px 24px}.portfolio-home .studio-note-grid article{padding:24px}
+  .portfolio-home .studio-contact{padding-block:43px}.portfolio-home .studio-contact h2{font-size:56px}
+  .portfolio-home .contact-bottom>div{gap:14px}.portfolio-home .contact-bottom a{font-size:11px;padding:10px 13px}
+  .portfolio-home .interest-strip{gap:14px}.portfolio-home .interest-strip>span{font-size:17px}
+  .portfolio-home .index .work-info>div{display:block}
+}
+@media(prefers-reduced-motion:reduce){.drawn-night-art{transition:none}.portfolio-home *{transition:none!important}}
+html[data-desk-light=night] .music-page .brand-name,html[data-desk-light=night] .music-page .header-status,html[data-desk-light=night] .music-page .section-label{color:#c1e5df}
+html[data-desk-light=night] .music-page .logo img,html[data-desk-light=night] .studio-project-page .project-logo img{filter:invert(1);mix-blend-mode:screen}
+html[data-desk-light=night] .studio-project-page .project-composition-number{color:#f7acd3}
+
